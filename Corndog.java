@@ -1,4 +1,4 @@
-/*Sabrina Reese + Ben
+/*Sabrina Reese + Ben Feibus
  * Cmdr Schenk
  * CSA Period 7
  * 19 September 2023
@@ -11,6 +11,8 @@ package reese.teach;
 import reese.teach.HotdogMeat;
 
 public class Corndog {
+    //create vars 
+    //Sabrina Reese
     String toppings;
     double price;
     float hotdogCost;
@@ -19,7 +21,7 @@ public class Corndog {
     int calories;
 
 
-    
+    //create default constructor
     public Corndog(){
         this.toppings="None";
         this.price = 3.99;
@@ -28,6 +30,7 @@ public class Corndog {
         this.isKosher = true;
         this.calories =250;
     }
+    //create partial constructor
     public Corndog(String toppings, double price){
         this.toppings= toppings;
         this.price=price;
@@ -36,7 +39,7 @@ public class Corndog {
         this.isKosher = false;
         this.calories =350;
     }
-    
+    //create partial constructor
     public Corndog(double price, float hotdogCost, reese.teach.HotdogMeat hotdogMeat, boolean isKosher ){
         this.toppings= "None";
         this.price=price;
@@ -45,6 +48,8 @@ public class Corndog {
         this.isKosher = isKosher;
         this.calories =200;
     }
+
+    //create full constructor
     public Corndog(String toppings, double price, float hotdogCost, reese.teach.HotdogMeat hotdogMeat, boolean isKosher, int calories ){
         this.toppings= toppings;
         this.price=price;
@@ -54,6 +59,8 @@ public class Corndog {
         this.calories =calories;
     }
 
+    //Ben Feibus
+    //getters and setters
     public String getToppings(){
         return this.toppings;
     }
@@ -102,6 +109,8 @@ public class Corndog {
         this.calories = calories;
     }
 
+    //Ben 
+    //to string print report
     public String toString() {
         String s = "Corndog Report\n";
         s += this.toppings + "\n";
