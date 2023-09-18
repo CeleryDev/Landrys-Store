@@ -7,7 +7,7 @@
 
 package reese.teach;
 
-public enum hotdogMeat {
+public enum HotdogMeat {
     Beef, 
     Turkey, 
     Pork, 
