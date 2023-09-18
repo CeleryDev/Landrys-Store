@@ -8,13 +8,13 @@
 
 package reese.teach;
 
-import reese.teach.hotdogMeat;
+import reese.teach.HotdogMeat;
 
 public class Corndog {
     String toppings;
     double price;
     float hotdogCost;
-    hotdogMeat hotdogMeat;
+    HotdogMeat hotdogMeat;
     boolean isKosher;
     int calories;
 
@@ -24,7 +24,7 @@ public class Corndog {
         this.toppings="None";
         this.price = 3.99;
         this.hotdogCost = 1.54f;
-        this.hotdogMeat= hotdogMeat.Turkey;
+        this.hotdogMeat= reese.teach.HotdogMeat.Turkey;
         this.isKosher = true;
         this.calories =250;
     }
@@ -32,12 +32,12 @@ public class Corndog {
         this.toppings= toppings;
         this.price=price;
         this.hotdogCost= 2.55f;
-        this.hotdogMeat= hotdogMeat.Pork;
+        this.hotdogMeat= reese.teach.HotdogMeat.Pork;
         this.isKosher = false;
         this.calories =350;
     }
     
-    public Corndog(double price, float hotdogCost, reese.teach.hotdogMeat hotdogMeat, boolean isKosher ){
+    public Corndog(double price, float hotdogCost, reese.teach.HotdogMeat hotdogMeat, boolean isKosher ){
         this.toppings= "None";
         this.price=price;
         this.hotdogCost= hotdogCost;
@@ -45,7 +45,7 @@ public class Corndog {
         this.isKosher = isKosher;
         this.calories =200;
     }
-    public Corndog(String toppings, double price, float hotdogCost, reese.teach.hotdogMeat hotdogMeat, boolean isKosher, int calories ){
+    public Corndog(String toppings, double price, float hotdogCost, reese.teach.HotdogMeat hotdogMeat, boolean isKosher, int calories ){
         this.toppings= toppings;
         this.price=price;
         this.hotdogCost=hotdogCost;
@@ -78,10 +78,10 @@ public class Corndog {
         this.hotdogCost = hotdogCost;
     }
 
-    public hotdogMeat getHotdogMeat(){
+    public HotdogMeat getHotdogMeat(){
         return this.hotdogMeat;
     }
-    public void setHotdogMeat(hotdogMeat hotdogMeat){
+    public void setHotdogMeat(HotdogMeat hotdogMeat){
         this.hotdogMeat = hotdogMeat;
     }
 
