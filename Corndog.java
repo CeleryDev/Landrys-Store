@@ -112,7 +112,7 @@ public class Corndog {
     //Ben 
     //to string print report
     public String toString() {
-        String s = "Corndog Report\n";
+        String s = "Corndog Report for Landry's Store\n";
         s += this.toppings + "\n";
         s += this.price + "\n";
         s += this.hotdogCost + "\n";
