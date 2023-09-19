@@ -39,6 +39,36 @@ public class CorndogMain {
 
         //print chagnes
         System.out.println(corndog2);
+
+        //create another partial constructor
+        Corndog corndog3 = new Corndog(3.99, 1.54f, reese.corndog.HotdogMeat.Turkey, true);
+        System.out.println(corndog3);
+
+        //set
+        corndog3.setToppings("Ketchup, Mustard, Relish");
+        corndog3.setHotdogMeat(reese.corndog.HotdogMeat.Chicken);
+        corndog3.setHotdogCost(2.99f);
+        corndog3.setIsKosher(false);
+        corndog3.setPrice(5.99);
+        corndog3.setCalories(999);
+
+        //print changes
+        System.out.println(corndog3);
+
+        //create full constructor
+        Corndog corndog4 = new Corndog("Ketchup, Mustard, Relish", 5.99, 2.99f, reese.corndog.HotdogMeat.Chicken, false, 999);
+        System.out.println(corndog4);
+
+        //set
+        corndog4.setToppings("Ketchup, Mustard, Relish, Jalapenos");
+        corndog4.setHotdogMeat(reese.corndog.HotdogMeat.Beef);
+        corndog4.setHotdogCost(3.99f);
+        corndog4.setIsKosher(true);
+        corndog4.setPrice(6.99);
+        corndog4.setCalories(1000);
+
+        //print changes
+        System.out.println(corndog4);
  
     }
 
