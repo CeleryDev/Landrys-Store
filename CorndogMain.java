@@ -11,6 +11,7 @@ package reese.teach;
 public class CorndogMain {
     public static void main(String[] args){
         //create default constructor
+        //sabrina
         Corndog corndog = new Corndog();
         System.out.println(corndog);
 
@@ -26,6 +27,7 @@ public class CorndogMain {
         System.out.println(corndog);
         
         //create partial constructor
+        //sabrina
         Corndog corndog2 = new Corndog("Pickle", 4.50);
         System.out.println(corndog2);
 
@@ -41,6 +43,7 @@ public class CorndogMain {
         System.out.println(corndog2);
 
         //create another partial constructor
+        //ben
         Corndog corndog3 = new Corndog(3.99, 1.54f, reese.corndog.HotdogMeat.Turkey, true);
         System.out.println(corndog3);
 
@@ -56,6 +59,7 @@ public class CorndogMain {
         System.out.println(corndog3);
 
         //create full constructor
+        //ben
         Corndog corndog4 = new Corndog("Ketchup, Mustard, Relish", 5.99, 2.99f, reese.corndog.HotdogMeat.Chicken, false, 999);
         System.out.println(corndog4);
 
