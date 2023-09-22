@@ -8,11 +8,78 @@
 package reese.teach;
 import java.util.Scanner;
 
-public class CorndogContainer {
+public class Box {
+    private String color;
+    private int quantityHeld;
+    private Size size;
+    private Boolean orderDelievered;
+    private Corndog[] order;
+    private double total;
+
+
+    
+    public Box(String color, int quantityHeld, Size size, Boolean orderDelievered, Corndog[] order, double total) {
+        this.color = color;
+        this.quantityHeld = quantityHeld;
+        this.size = size;
+        this.orderDelievered = orderDelievered;
+        this.order = order;
+        this.total = total;
+    }
+
+
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getQuantityHeld() {
+        return this.quantityHeld;
+    }
+
+    public void setQuantityHeld(int quantityHeld) {
+        this.quantityHeld = quantityHeld;
+    }
+
+    public Size getSize() {
+        return this.size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public Boolean getOrderDelievered() {
+        return this.orderDelievered;
+    }
+
+    public void setOrderDelievered(Boolean orderDelievered) {
+        this.orderDelievered = orderDelievered;
+    }
+
+    public Corndog[] getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(Corndog[] order) {
+        this.order = order;
+    }
+
+    public double getTotal() {
+        return this.total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
     public static void Crud(){
         Scanner in = new Scanner(System.in);
         Integer menu = 0;
-        String[] order = new String[12];
         do {
             System.out.println("Welcome to Landry's Store!");
             System.out.println("Type 1 to add a corndog to your order, 2 to update a corndog in your order, 3 to delete a corndog in your order, 4 to read a corndog in your order, or 5 to end order:");
@@ -45,7 +112,6 @@ public class CorndogContainer {
         String name = in.next();
         System.out.println("Your total is {total of order}. " + name + ", please select a tip total: 15%, 18%, 20%, or custom");
         double tip = in.nextDouble();
-        double total = 1.0;
         total *=(1+(tip/100));
         System.out.println("Your new total is: " + total);
     }
