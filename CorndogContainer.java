@@ -12,14 +12,7 @@ import reese.teach.HotdogMeat;
 
 public class CorndogContainer {
     //Ben
-    public void main() {
-        CorndogContainer corndogOrder = new CorndogContainer();
-
-        corndogOrder.AddCorndog(new Corndog("Ketchup, Mustard", 4.99, 1.23f, HotdogMeat.Pork, false, 555));
-        corndogOrder.AddCorndog(new Corndog("Pickles, Relish, Jalapenos", 9.99, 5.795f, HotdogMeat.Vegan, true, 777));
-        corndogOrder.AddCorndog(new Corndog("Ketchup, Mustard, Relish", 5.99, 2.99f, HotdogMeat.Chicken, false, 999));
-    }
-
+    //create vars
     private ArrayList<Corndog> corndogsOrder;
     int quantityHeld;
     String color;
@@ -29,41 +22,38 @@ public class CorndogContainer {
 
      //Sabrina
     //partial constructor
-    public Box(Boolean orderDelievered, Corndog[] order, double total) {
+    public CorndogContainer(boolean orderDelievered, ArrayList<Corndog> corndogsOrder, double total) {
         this.color = "Red";
         this.quantityHeld=12;
         this.size = reese.teach.Size.S;
-        this.orderDelievered = orderDelievered;
-        this.order = order;
+        this.orderDelivered = orderDelievered;
+        this.corndogsOrder = corndogsOrder;
         this.total = total;
     }
 
     //default constructor
-    public Box() {
+    public CorndogContainer() {
         this.color = "Blue";
         this.quantityHeld=15;
         this.size = reese.teach.Size.M;
-        this.orderDelievered = false;
-        this.order = order;
+        this.orderDelivered = false;
+        this.corndogsOrder = new ArrayList<Corndog>();
         this.total = 0.0;
     }
 
     //full constructor
-    public Box(String color, int quantityHeld, Size size, Boolean orderDelievered, Corndog[] order, double total) {
+    public CorndogContainer(String color, int quantityHeld, Size size, boolean orderDelievered,ArrayList<Corndog> corndogsOrder, double total) {
         this.color = color;
         this.quantityHeld = quantityHeld;
         this.size = size;
-        this.orderDelievered = orderDelievered;
-        this.order = order;
+        this.orderDelivered = orderDelievered;
+        this.corndogsOrder = corndogsOrder;
         this.total = total;
     }
 
     //ben
     
-    public CorndogContainer() { 
-        this.corndogsOrder = new ArrayList<Corndog>();
-    }
-
+    //partial constructor
     public CorndogContainer(Corndog corndog) {
         this.corndogsOrder = new ArrayList<Corndog>();
     }
@@ -148,10 +138,22 @@ public class CorndogContainer {
         for (int i = 0; i < this.GetLength(); i++) {
             s += this.GetCorndog(i).toString() + "\n";
         }
+        s+="Box Report \n";
+        s += this.color + "\n";
+        s += this.quantityHeld + "\n";
+        s += this.total + "\n";
+        s += this.orderDelivered + "\n";
+        s += this.size + "\n";
         return s;
     }
+
+    //Sabrina
+    //calc total
+    public double total(){
+        double t = 0.0;
+        for (int i = 0; i < this.GetLength(); i++) {
+            t += this.GetCorndog(i).getPrice();
+        }
+        return t;
+    }
 }
-
-
-
-
