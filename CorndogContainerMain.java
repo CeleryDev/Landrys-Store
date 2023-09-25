@@ -8,6 +8,7 @@
 
 package reese.teach;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CorndogContainerMain {
@@ -16,28 +17,28 @@ public class CorndogContainerMain {
         Scanner in = new Scanner(System.in);
         Integer menu = 0;
         System.out.println("Welcome to Landry's Store!");
-        //sabrina 
-        CorndogContainer box =new CorndogContainer();
-        //CorndogContainer box = new CorndogContainer("Green", 15, reese.teach.Size.M,  false,corndogsOrder,  0.0);
+        //create constructor
+        ArrayList<Corndog> Order = new ArrayList<Corndog>(); 
+        CorndogContainer box = new CorndogContainer("Green", 15, reese.teach.Size.M,  false,Order,  0.0);
         System.out.println(box);
 
-        //set
+        //change some cosntructor vars
         box.setSize(reese.teach.Size.S);
         box.SetQuantityHeld(12);
         box.SetColor("Red");
         box.SetTotal(1.25);
-        //change set box 
+        //print set box 
         System.out.println(box);
         //run do while loop for crud
         //Sabrina
         do {
             
-            
             System.out.println("Type 1 to add a corndog to your order, 2 to update a corndog in your order, 3 to delete a corndog in your order, 4 to read a corndog in your order, or 5 to end order:");
             menu = in.nextInt();
             switch (menu) {
-                //Sabrina
+                
                 case 1:
+                //add 3 corndogs
                     System.out.println("Add 3 corndogs");
                     
                     box.AddCorndog(new Corndog("Ketchup, Mustard", 4.99, 1.23f, HotdogMeat.Pork, false, 555));
@@ -46,21 +47,41 @@ public class CorndogContainerMain {
                     System.out.println(box);
                     break;
                 case 2:
+                //update corndog at x index
                     System.out.println("Update a corndog");
                     System.out.println("Enter index");
-                    int index = in.nextInt();
-                    box.SetCorndog(index, new Corndog(3.99, 1.54f, reese.teach.HotdogMeat.Turkey, true));
+                    //error catching if index out of range
+                    try {
+                        int index = in.nextInt();
+                        box.SetCorndog(index, new Corndog(3.99, 1.54f, reese.teach.HotdogMeat.Turkey, true));
+                    } catch (Exception e) {
+                        System.out.println("You entered something wrong. Try again: ");
+                        int index = in.nextInt();
+                        box.SetCorndog(index, new Corndog(3.99, 1.54f, reese.teach.HotdogMeat.Turkey, true));
+                    }
+                    
                     System.out.println(box);
                     break;
                 case 3:
+                //delete last corndog
                     System.out.println("Delete the last corndog");
+
                     box.RemoveCorndog();
                     break;
                 case 4:
+                //read corndog at x index
                     System.out.println("Read a corndog");
                     System.out.println("Enter index");
-                    int index1 = in.nextInt();
-                    System.out.println(box.GetCorndog(index1)); 
+                    //try catch if index out of range
+                    try {
+                        int index1 = in.nextInt();
+                        System.out.println(box.GetCorndog(index1)); 
+                    } catch (Exception e) {
+                        System.out.println("You entered something wrong. Try again: ");
+                        int index1 = in.nextInt();
+                        System.out.println(box.GetCorndog(index1)); 
+                    }
+                    
                     break;
                 case 5:
                     break;
@@ -81,6 +102,8 @@ public class CorndogContainerMain {
         //get tip amt
         total1 *=(1+(tip/100));
         System.out.println("Your new total is: " + total1);
+
+        //change final constructors
         box.SetOrderDelivered(true);
         box.SetTotal(total1);
 
