@@ -11,7 +11,7 @@ import reese.teach.Corndog;
 import reese.teach.HotdogMeat;
 
 public class CorndogContainer {
-
+    //Ben
     public void main() {
         CorndogContainer corndogOrder = new CorndogContainer();
 
@@ -27,6 +27,39 @@ public class CorndogContainer {
     boolean orderDelivered;
     Size size;
 
+     //Sabrina
+    //partial constructor
+    public Box(Boolean orderDelievered, Corndog[] order, double total) {
+        this.color = "Red";
+        this.quantityHeld=12;
+        this.size = reese.teach.Size.S;
+        this.orderDelievered = orderDelievered;
+        this.order = order;
+        this.total = total;
+    }
+
+    //default constructor
+    public Box() {
+        this.color = "Blue";
+        this.quantityHeld=15;
+        this.size = reese.teach.Size.M;
+        this.orderDelievered = false;
+        this.order = order;
+        this.total = 0.0;
+    }
+
+    //full constructor
+    public Box(String color, int quantityHeld, Size size, Boolean orderDelievered, Corndog[] order, double total) {
+        this.color = color;
+        this.quantityHeld = quantityHeld;
+        this.size = size;
+        this.orderDelievered = orderDelievered;
+        this.order = order;
+        this.total = total;
+    }
+
+    //ben
+    
     public CorndogContainer() { 
         this.corndogsOrder = new ArrayList<Corndog>();
     }
@@ -39,6 +72,7 @@ public class CorndogContainer {
         this.corndogsOrder = new ArrayList<Corndog>(corndogs);
     }
 
+    //getters+setters
     public String GetColor() {
         return this.color;
     }
@@ -82,6 +116,7 @@ public class CorndogContainer {
         return this.corndogsOrder.size();
     }
 
+    //crud
     public void AddCorndog(Corndog corndog) {
         this.corndogsOrder.add(corndog);
     }
@@ -106,6 +141,7 @@ public class CorndogContainer {
         this.corndogsOrder.set(index, corndog);
     }
 
+    //print all
     public String toString() {
         String s = "Container Length: " + this.GetLength() + "\n";
 
