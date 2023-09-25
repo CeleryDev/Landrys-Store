@@ -25,6 +25,7 @@ public class CorndogContainer {
     String color;
     double total;
     boolean orderDelivered;
+    Size size;
 
     public CorndogContainer() { 
         this.corndogsOrder = new ArrayList<Corndog>();
@@ -68,6 +69,13 @@ public class CorndogContainer {
 
     public void SetOrderDelivered(boolean orderDelivered) {
         this.orderDelivered = orderDelivered;
+    }
+    public Size getSize() {
+        return this.size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
     }
 
     public int GetLength() {
