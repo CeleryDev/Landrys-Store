@@ -148,12 +148,52 @@ public class CorndogContainer {
     }
 
     //Sabrina
+    //addons to order
+    public double AddOns(int add, int quantity1){
+        double addTotal =0.0;
+        switch (add) {
+            case 1:
+                addTotal = quantity1 * 2.23;
+                break;
+            case 2:
+                addTotal = quantity1 * 5.53;
+                break;
+            case 3:
+                addTotal = quantity1 * 4.54;
+                break;
+            case 4:
+                addTotal = quantity1 * Math.PI;
+                break;
+            default:
+                addTotal = 0.0;
+        }
+        return addTotal;
+    }
     //calc total
-    public double total(){
+    //method1
+    public double Total(double addOns){
         double t = 0.0;
         for (int i = 0; i < this.GetLength(); i++) {
             t += this.GetCorndog(i).getPrice();
         }
-        return t;
+        return t + addOns;
     }
+
+    //Sabrina 
+    //calculate profit made
+    //method 2
+    public double Profit(double addOns){
+        //take order
+        double cost = Total(addOns);
+        double expense = 0.0;
+        for (int i = 0; i < this.GetLength(); i++) {
+            expense += this.GetCorndog(i).getHotdogCost();
+        }
+        double paidEmployees = this.GetLength() * 2.0;
+        return cost-expense-paidEmployees;
+    }
+
+    
+
+    
 }
