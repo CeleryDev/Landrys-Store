@@ -10,6 +10,7 @@ package reese.teach;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class CorndogContainerMain {
     //Sabrina
@@ -92,10 +93,27 @@ public class CorndogContainerMain {
         } while (menu!=5);
         //calculate total+ get name
         //Sabrina
-        double total1 = box.total();
-        box.SetTotal(total1);
+        
         System.out.println("Thank you for ordering from Landry's Store. Your final order is:" + box +"May I have a name for the order?");
         String name = in.next();
+
+        //addon method
+        System.out.println("Do you want any addons? ");
+        System.out.println("1. Soft Drink \n 2. Fries \n 3. Milkshake \n 4. Slice of pi");
+        int add =0;
+        try {
+            add = in.nextInt();
+        } catch (Exception e) {
+            System.out.println("You entered something wrong. (or you dont want anything; type 7)");
+            String x = in.next();
+            add = in.nextInt();
+        }
+        System.out.println("How Many?");
+        int quantity = in.nextInt();
+        double addOns = box.AddOns(add, quantity);
+        System.out.println(addOns);
+        double total1 = box.Total(addOns);
+        box.SetTotal(total1);
         
         System.out.println("Your total is " +total1+ name + ", please select a tip total: 15%, 18%, 20%, or custom");
         double tip = in.nextDouble();
@@ -108,6 +126,8 @@ public class CorndogContainerMain {
         box.SetTotal(total1);
 
         System.out.println(box);
+
+        System.out.println("The profit the CEOs (not the workers (you are personally funding the billionaires)) made from your order is (WITHOUT TIP): "+Math.round(box.Profit(addOns)));
 
     }
 
